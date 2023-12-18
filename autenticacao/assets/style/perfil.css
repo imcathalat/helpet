@@ -1,0 +1,84 @@
+body {
+  background-color: #6bc1ff92;
+}
+
+.contador
+{
+  padding-top: 150px;
+}
+
+.imgSize
+{
+  height: 250px;
+  width: 250px;
+}
+
+
+/* USUARIO
+--------------*/
+
+.edit-description {
+  font-size: 30px;
+}
+
+.titulo-description {
+  font-size: 15px;
+}
+
+.btn-logout:hover {
+  background-color: rgb(235, 102, 102);
+}
+
+.btn-header {
+  background-color: #ffd195;
+  font-size: 15px;
+}
+
+#excluir-perfil{
+  background-color: rgb(244, 87, 87);
+}
+
+#excluir-perfil:hover{
+  background-color: rgb(214, 51, 51);
+}
+
+.btn-header:hover {
+  background-color: #d69a3a;
+}
+
+/*CARDS PETS
+-------------*/
+
+
+.card-pets-em-adocao{
+  box-shadow: 1px 2px 30px -4px rgba(0,0,0,0.42);
+  border-radius: 5px;
+  background-color: white;
+}
+
+.btn-adotar {
+  background-color: #ffd195;
+}
+
+.btn-adotar:hover{
+  background-color: #d69a3a;
+}
+
+.card-description{
+  background-color: white;
+  font-size: 20px;
+}
+
+.edit-description:hover{
+  color: black;
+}
+
+/* CARDS AJUDA FINANCEIRA*/
+
+#financeiro {
+  height: 250px;
+}
+
+.card-ajuda-financeira {
+  box-shadow: 1px 2px 30px -4px rgba(0,0,0,0.42);
+}

@@ -1,0 +1,16 @@
+.logohelpet{
+    width: 120px;
+    height: 120px;
+}
+
+.card{
+    --bs-card-border-color: none;
+}
+.custom-img {
+    width: 200px;
+    height: auto;
+}
+
+
+
+

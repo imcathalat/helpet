@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style/queroAdotar.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="stylesheet" href="assets/style/navbar-com-shadow.css">
+    <title>Quero Adotar · Helpet</title>
+
+    <link rel="stylesheet" href="assets/style/queroAdotar.css">
+
+</head>
+
+<body>
+
+    
+        <!--cabecalho-->
+        <header>
+            <nav class="navbar navbar-expand-lg" id="navbar">
+            
+            </nav>
+        </header>
+        <!--fim cabecalho-->
+    
+    <main class="main-content">
+        <section class="filtro">
+                    <div class="form-floating m-2 mt-5">
+                        <select class="form-select" id="specie" aria-label="Floating label select example">
+                            <option value="null">Selecione</option>
+                            <option value="cachorro">cachorro</option>
+                            <option value="gato">gato</option>
+                        </select>
+                        <label for="floatingSelect">Espécie</label>
+                    </div>
+
+                    <div class="form-floating m-2 mt-3">
+                        <select class="form-select" id="sexo" aria-label="Floating label select example">
+                            <option value="null">Selecione</option>
+                            <option value="macho">macho</option>
+                            <option value="femea">femea</option> 
+                        </select>
+                        <label for="floatingSelect">Sexo</label>
+                    
+                    </div>
+
+                    <div class="form-floating m-2 mt-3">
+                        <select class="form-select" id="idade" aria-label="Floating label select example">
+                            <option value="null">Selecione</option>
+                            <option value="filhote">filhote</option>
+                            <option value="adulto">adulto</option>
+                        </select>
+                        <label for="floatingSelect">Idade</label>
+                    </div>
+
+                    <div class="form-floating m-2 mt-3">
+                        <select class="form-select" id="porte" aria-label="Floating label select example">
+                            <option value="null">Selecione</option>
+                            <option value="pequeno">pequeno</option>
+                            <option value="medio">medio</option>
+                            <option value="grande">grande</option>
+                        </select>
+                        <label for="floatingSelect">Porte</label>
+                    </div>
+
+
+                        <div class="align-content-center  d-flex flex-wrap justify-content-center mt-4">
+                            <button id="applyFilter" class="btn btn-filtro"><strong>Aplicar Filtro</strong></button>
+                        </div>
+                </section>
+
+        <div class="conteudo-principal ">
+
+            <div id="cardContainer" class="row mt-4 p-3">
+
+            </div>
+        </div>
+    </main>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="assets/scripts/queroAdotar.js"></script>
+    <script src="../navbar/navbar-nao-logado.js"></script>
+
+</body>
+
+</html>

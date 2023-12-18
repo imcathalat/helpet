@@ -1,0 +1,39 @@
+.main-content {
+    display: flex;
+}
+
+
+.filtro{
+    background-color: bisque;
+    top: 130px;
+    left: 0;
+    width:300px;
+}
+
+.conteudo-principal {
+    padding: 20px; /* Adapte conforme necessário */
+    box-sizing: border-box;
+}
+
+.card-pets-em-adocao{
+    box-shadow: 1px 2px 30px -4px rgba(0,0,0,0.42);
+    border-radius: 5px;
+    background-color: white;
+    width: 270px;
+  }
+  
+.btn-adotar {
+    background-color: #6bc1ffc2;
+}
+  
+.btn-adotar:hover{
+    background-color: #2098ef;
+}
+
+.btn-filtro{
+    background-color: #6bc1ff;
+}
+
+.btn-filtro:hover{
+    background-color: #2098ef;
+}

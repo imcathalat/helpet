@@ -1,0 +1,38 @@
+* {
+	font-family: 'Times New Roman', Times, serif;
+	
+}
+
+body{
+	background-color: #6bc1ff92;
+}
+.card{
+	margin-left: 10px;
+	margin-right: 10px;
+	background-color: #d69a3a;
+	color:black;
+	box-shadow: -10px 0px 43px 34px rgba(0,0,0,0.1);
+	border-color: #d69a3a;
+	font-weight:400;
+}
+
+.btn {
+	background-color: #6bc1ff;
+	color: black;
+}
+
+.btn-excluir {
+	background-color: rgb(235, 83, 83);
+}
+
+hr{
+	font-weight: bold;
+}
+
+h1 {
+	font-size:x-large;
+}
+
+thead {
+	background-color: #6bc1ff;
+}

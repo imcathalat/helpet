@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Ajuda - Ração</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="assets/style/cadastro-racao.css">
+    <script src="assets/scripts/cadastro-racoes-ajuda.js"></script>
+
+    <link rel="stylesheet" href="../navbar/">
+
+</head>
+<body onload="init()">
+    
+    <header>
+        <nav class="navbar navbar-expand-lg" id="navbar">
+        
+        </nav>
+    </header>
+
+    
+    <div class="container my-5 form-wrapper">
+
+        <div class="row">
+            <div id="msg" class="col-sm-10 offset-sm-1 ">
+                <!--<div class="alert alert-warning">Contato não encontrado.</div>-->
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="card mt-2 mx-auto p-4 ">
+                    <h1 class="mx-auto">Como alguém pode te ajudar com alimentação?</h1>
+                    <hr>
+
+                    <div class="container">
+                        <form id="cadastroPetForm" role="form">
+                            <div class="controls">
+                                <div class="row">
+
+                                    <div class="col-md-10">
+                                        <div class="form-group">
+                                            <label for="inputChavePix" class="form-label">Chave Pix</label>
+                                            <input class="form-control" type="text" aria-label="Nome do bixinho" id="inputChavePix">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label for="inputId" class="form-label">Id</label>
+                                            <input type="text" class="form-control" id="inputId" placeholder="ID" disabled>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                    <div class="row">
+                                        <div class="col-md-4 mt-2">
+                                            <div class="form-group">
+                                                <label for="inputNomeDaRacao" class="form-label">Nome da Ração*</label>
+                                                <input type="text" class="form-control" id="inputNomeRacao" required>
+                                            </div>
+                                        </div>
+    
+                                        <div class="col-md-3 mt-2">
+                                            <div class="form-group">
+                                                <label for="inputValorRacao" class="form-label">Valor da Ração*</label>
+                                                <input type="number" inputmode="numeric" class="form-control" id="inputValorRacao" required>
+                                            </div>
+                                        </div>
+    
+                                        <div class="col-md-5 mt-1">
+                                            <div class="form-group mt-1 mt-1">
+                                                <label class="form-label">Foto da Ração: *</label>
+                                                <input type="url" class="form-control" placeholder="Insira URL da Imagem" id="inputUrlImagem">
+                                                <img width="200px" height="auto" id="displayImage" class="d-none">
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group row">
+                                        <div class="col-sm-4 mb-3">
+                                            <small>(*) Campos obrigatórios</small>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <input type="button" class="btn " id="btnInsert" value="Salvar">
+                                        <input type="button" class="btn " id="btnUpdate" value="Alterar">
+                                        <input type="button" class="btn " id="btnDelete" value="Excluir">
+                                        <input type="button" class="btn " id="btnClear" value="Limpar Form">
+                                    </div>
+                                
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12 mt-5 mb-0">
+
+            </div>
+        </div>
+
+        <table class="table table-stripped my-4 table-hover table-responsive" id="grid-racoes">
+            <thead class="thead">
+                <tr>
+                    <th>#</th>
+                    <th>Chave Pix</th>
+                    <th>Nome da Ração</th>
+                    <th>Preço</th>
+                    <th>Imagem</th>
+                </tr>
+            </thead>
+            <tbody id="tableInfos">
+
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <script src="assets/scripts/cadastro-racoes-ajuda.js"></script>
+    <script src="../navbar-component/navbar.js"></script>
+
+    <script>
+        function exibeAjuda() {
+            tableRacao = document.getElementById("tableInfos");
+
+            // Remove todas as linhas do corpo da tabela
+            tableRacao.innerHTML = "";
+
+            readAjuda(dados => {
+                // Popula a tabela com os registros do banco de dados
+                for (i = 0; i < dados.length; i++) {
+                    let racao = dados[i];
+                    tableRacao.innerHTML += `<tr><td scope="row">${racao.id}</td>
+                        <td>${racao.chavePix}</td>
+                        <td>${racao.nome}</td>
+                        <td>${racao.preco}</td>
+                        <td><img style="height= 150px" width="150px" src="${racao.image}"/></td>
+                        </tr>`;
+                }
+            })
+        }
+
+        function init() {
+            // Define uma variável para o formulário de contato
+            formRacao = document.getElementById("cadastroPetForm");
+
+            // Adiciona funções para tratar os eventos 
+            btnInsert = document.getElementById("btnInsert");
+
+            btnInsert.addEventListener('click', function () {
+
+            // Verifica se o formulário está preenchido corretamente
+                if (!formRacao.checkValidity()) {
+                    displayMessage("Preencha o formulário corretamente.");
+                    return;
+                }
+
+                // Obtem os valores dos campos do formulário
+                let inputChavePix = document.getElementById('inputChavePix').value;
+                let inputNomeRacao = document.getElementById('inputNomeRacao').value;
+                let inputValorRacao = document.getElementById('inputValorRacao').value;
+                let inputUrlImagem = document.getElementById('inputUrlImagem').value;
+
+                // Cria um objeto com os dados do contato
+                let ajuda = {
+                    chavePix: inputChavePix,
+                    nome: inputNomeRacao,
+                    preco: inputValorRacao,
+                    image: inputUrlImagem,
+                };
+
+                // Cria o contato no banco de dados
+                createAjuda(ajuda, exibeAjuda);
+
+                // Limpa o formulario
+                formRacao.reset()
+            });
+
+            // Trata o click do botão Alterar
+            btnUpdate = document.getElementById("btnUpdate");
+
+            btnUpdate.addEventListener('click', function () {
+                // Obtem os valores dos campos do formulário
+                let campoId = document.getElementById("inputId").value;
+
+                if (campoId == "") {
+                    displayMessage("Selecione antes um contato para ser alterado.");
+                    return;
+                }
+
+                // Obtem os valores dos campos do formulário
+                let inputChavePix = document.getElementById('inputChavePix').value;
+                let inputNomeRacao = document.getElementById('inputNomeRacao').value;
+                let inputValorRacao = document.getElementById('inputValorRacao').value;
+                let inputUrlImagem = document.getElementById('inputUrlImagem').value;
+
+                // Cria um objeto com os dados do contato
+                let ajuda = {
+                    chavePix: inputChavePix,
+                    nome: inputNomeRacao,
+                    preco: inputValorRacao,
+                    image: inputUrlImagem,
+                };
+
+                // Altera o contato no banco de dados
+                updateAjuda(parseInt(campoId), ajuda, exibeAjuda);
+
+                // Limpa o formulario
+                formRacao.reset()
+            });
+
+            // Trata o click do botão Excluir
+            btnDelete = document.getElementById('btnDelete');
+
+            btnDelete.addEventListener('click', function () {
+                let campoId = document.getElementById('inputId').value;
+
+                if (campoId == "") {
+                    displayMessage("Selecione um contato a ser excluído.");
+                    return;
+                }
+
+                // Exclui o contato no banco de dados
+                deleteAjuda(parseInt(campoId), exibeAjuda);
+
+                // Limpa o formulario
+                formRacao.reset()
+            });
+
+            // Trata o click do botão Listar Contatos
+            btnClear = document.getElementById('btnClear');
+
+            btnClear.addEventListener('click', function () {
+                formRacao.reset()
+            });
+
+            // Oculta a mensagem de aviso após alguns 5 segundos
+            msg = document.getElementById('msg');
+
+            msg.addEventListener("DOMSubtreeModified", function (e) {
+                if (e.target.innerHTML == "") return;
+
+                setTimeout(function () {
+                    alert = msg.getElementsByClassName("alert");
+                    alert[0].remove();
+                }, 5000);
+            })
+
+            // Preenche o formulário quando o usuario clicar em uma linha da tabela 
+            gridRacoes = document.getElementById("grid-racoes");
+
+            gridRacoes.addEventListener('click', function (e) {
+                console.log(e.target);
+                if (e.target.tagName == "TD") {
+
+                    // Obtem as colunas da linha selecionada na tabela
+                    let linhaRacao = e.target.parentNode;
+                    colunas = linhaRacao.querySelectorAll("td");
+
+                    // Preenche os campos do formulário com os dados da linha selecionada na tabela
+                    document.getElementById ('inputId').value = colunas[0].innerText;
+                    document.getElementById('inputChavePix').value = colunas[1].innerText;
+                    document.getElementById('inputNomeRacao').value = colunas[2].innerText;
+                    document.getElementById('inputValorRacao').value = colunas[3].innerText;
+                    document.getElementById('inputUrlImagem').value = colunas[4].innerText;
+                    //let campoImagem = document.getElementById('imagemPetBase64').value;
+
+                }
+            });
+
+
+        exibeAjuda();
+    }
+    </script>
+
+
+
+</body>
+</html>

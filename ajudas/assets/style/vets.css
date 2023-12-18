@@ -1,0 +1,27 @@
+.navbar{
+    --bs-navbar-padding-x: -2;
+    background-color: white;
+    box-shadow: -48px 9px 20px 8px rgba(0,0,0,0.1);
+	background-color: rgba(255, 255, 255, 0.686);
+}
+
+body{
+    background-color: #C5DFF8;
+}
+
+.btn-primary{
+    --bs-btn-color: #3d93e8;
+    --bs-btn-bg: #C5DFF8;
+    --bs-btn-border-color: #3d93e8;
+    --bs-btn-hover-color: #3d93e8;
+    --bs-btn-hover-bg: white;
+    --bs-btn-hover-border-color: #3d93e8;
+    --bs-btn-focus-shadow-rgb: 13,110,253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #3d93e8;
+    --bs-btn-active-border-color: #3d93e8;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #3d93e8;
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: #3d93e8;
+}

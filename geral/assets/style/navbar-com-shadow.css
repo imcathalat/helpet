@@ -1,0 +1,19 @@
+.navbar {
+	color: #6bc1ff92;
+	font-weight: 600;
+	background-color: white;
+	box-shadow: -48px 9px 20px 8px rgba(0,0,0,0.1);
+}
+
+
+.nav-link:hover {
+	color:#ffd195;
+}
+
+.btn-login {
+	background-color: #ffd195;
+}
+
+.btn-login:hover {
+	background-color: #d69a3a;
+}

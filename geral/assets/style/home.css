@@ -1,0 +1,128 @@
+#body {
+    background-color: #6bc1ff92;
+}
+.border{
+    border-width: 1px!important;
+    border-radius: 15px !important;
+    border-color: gold !important;
+}
+.card-motivos{
+    justify-content: center !important;
+    flex-wrap: wrap;
+}
+
+.img-motivos{
+    height: 100px;
+}
+.tudoMotivos{
+    background-color: #ffd195;
+}
+.containerMotivos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.cardMotivos{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: space-around;
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 10px !important;
+    padding: 20px;
+    background-color: #ffffff;
+    
+}
+
+.textoMotivos{
+    margin-top: 20px;
+    text-align: center;
+}
+.pq{
+    justify-content: space-around;
+}
+
+.card-pets-em-adocao{
+    box-shadow: 1px 2px 30px -4px rgba(0,0,0,0.42);
+    border-radius: 5px;
+    background-color: white;
+    width: 270px;
+}
+  
+.btn-adotar {
+    background-color: #ffd195;
+}
+  
+.btn-adotar:hover{
+    background-color: #d69a3a;
+}
+
+.slide-content{
+    margin: 0 40px;
+}
+.card-rate{
+    margin: 0.5em;
+    display: flex !important;
+    flex-direction:  row ;
+    align-items: center !important;
+    width: 60% !important;
+}
+.card-rate-first{
+    width: 550px !important;
+    border: 0 !important;
+    display: inline-block !important;
+    position: relative !important;
+
+}
+
+.cards-wrapper{
+    justify-content: center;
+}
+
+.img-nome{
+    width: 200px !important;
+}
+
+.card-body-rate{
+    width: 60% !important;
+}
+
+.img-perfil-rate{
+    border-radius: 100px !important;
+    border: 2px solid royalblue;
+
+}
+
+.img-firs-rate{
+    display: block;
+    width: 550px !important;
+}
+
+.texto-first-rate{
+    text-align: center;
+    width: 550px !important;
+}
+
+.petMotivos{
+    position: absolute;
+    top: 444px;
+    right: 300px;
+}
+
+a.ver-mais {
+    background-color: #ffd195;
+    border-color: #ffd195;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  .ver-mais:hover{
+    background-color: #d69a3a;
+    color: white;
+  }
+  
+  .ver-mais-button{
+    font-size: 25px;
+    color: rgba(33, 33, 33, 0.753);
+  }

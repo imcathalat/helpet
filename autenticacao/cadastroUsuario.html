@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+  <!--perfil usuário-->
+  <link rel="stylesheet" href="assets/style/perfil.css">
+
+  <!--css-->
+  <link rel="stylesheet" href="assets/style/cadastroUsuario.css">
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+
+  <title>Perfil</title>
+</head>
+
+<body  onload="init()">
+    <div class="container  form-wrapper mt-5">
+
+        <div class="row">
+            <div id="msg" class="col-sm-10 offset-sm-1 ">
+                <!--<div class="alert alert-warning">Contato não encontrado.</div>-->
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="card mt-2 mx-auto p-4 ">
+                    <h1 class="mx-auto">Registre seus dados</h1>
+                    <hr>
+                    <div class="container">
+                        <form id="cadastroUser" role="form">
+                            <div class="controls">
+                                <div class="row">
+                                    <div class="col-md-10">
+                                        <div class="form-group mt-1">
+                                            <label for="inputNome" class="form-label">Nome* </label>
+                                            <input class="form-control" type="text" aria-label="Nome do bixinho"
+                                                id="inputNome">
+                                        </div>
+                                    </div>
+                                    <!--NOME-->
+                                    <div class="col-md-2">
+                                        <div class="form-group mt-1">
+                                            <label for="inputId" class="form-label">Id</label>
+                                            <input type="text" class="form-control" id="inputId" placeholder="ID" disabled>
+                                        </div>
+                                    </div>
+                                    <!--EMAIL-->
+                                    <div class="col-md-6">
+                                        <div class="form-group mt-1">
+                                            <label for="selectEspecie" class="form-label">Email *</label>
+                                            <input type="email" id="inputEmail" class="form-control" placeholder="xxxx@gmail.com">
+                                        </div>
+                                    </div>
+                                    <!--TELEFONE-->
+                                    <div class="col-md-6">
+                                        <div class="form-group mt-1">
+                                            <label for="selectEspecie" class="form-label">Telefone *</label>
+                                            <input type="tel" class="form-control" id="inputTelefone" placeholder="(00)900000000">
+
+                                        </div>
+                                    </div>
+                                    <!--ESTADO-->
+                                    <div class="col-md-6">
+                                        <div class="form-group mt-1">
+                                            <label for="inputEstado" class="form-label">Estado *</label>
+                                            <select id="selectEstado" class="form-select">
+                                                
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <!--CIDADE--->
+                                    <div class="col-md-6">
+                                        <div class="form-group mt-1">
+                                            <label for="inputCidade" class="form-label">Cidade *</label>
+                                            <select id="selectCidade" class="form-select">
+                                                
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <!--USER NAME-->
+                                    <div class="col-md-6">
+                                        <div class="form-group mt-1">
+                                            <label for="selectIdade" class="form-label">Nome de usuario *</label>
+                                            <input type="text" class="form-control" id="inputUser">
+                                        </div>
+                                    </div>
+                                    <!--SENHA-->
+                                    <div class="col-md-6">
+                                        <div class="form-group mt-1">
+                                            <label for="selectPorte" class="form-label">Senha *</label>
+                                            <input type="password" id="inputSenha" class="form-control">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="form-group my-3">
+                                            <div class="col-md-12">
+                                                <label for="textareaSobre" class="mb-2">Sobre você: *</label>
+                                                <textarea id="textareaDescricao" name="message" class="form-control"
+                                                    placeholder="Descreva um pouco sobre voce aqui" rows="4"
+                                                    required="required"
+                                                    data-error="Please, leave us a message."></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="form-group my-3">
+                                               <div class="col-md-12">
+                                               <label class="form-label">Foto de perfil: *</label>
+                                               <input type="url" class="form-control" placeholder="Insira URL da Imagem" id="inputUrlImagem">
+                                               <img width="200px" height="auto" id="displayImage" class="d-none">
+                                            </div>
+                                        </div>
+                                    </div>
+                                        <div class="form-group row">
+                                            <div class="col-sm-6 mb-3">
+                                                <small>(*) Campos obrigatórios</small>
+                                            </div>
+                                        </div>
+                                    <div class="col-12">
+                                        <input type="button" class="btn " id="btnInsert" value="Salvar">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </form>
+                        <div>
+                            <a class="btn mt-4 mb-4 text-center m-5 d-flex justify-content-center" href="login.html">Clique aqui se já possui cadastro</a>
+                        </div>
+                        
+                    </div>
+                    <!--ate aq-->
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12 mt-5 mb-0">
+                
+            </div>
+        </div>
+
+        
+        <!--script do bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>   
+        <script src="assets/scripts/cadastroUsuario.js"></script>
+
+
+</body>
+
+</html>
